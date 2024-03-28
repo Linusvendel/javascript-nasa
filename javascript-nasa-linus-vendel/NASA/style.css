@@ -1,0 +1,265 @@
+@charset "UTF-8";
+*, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: 0.3s;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(160, 221, 183);
+  padding: 1rem;
+}
+
+#switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* switch - Boxen runt slider */
+.switchBtn {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  /* Gömmer default HTML checkbox */
+}
+.switchBtn input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.switchBtn input:checked + .slider {
+  background-color: black;
+}
+.switchBtn input:checked + .slider:before {
+  transform: translateX(23px);
+  background-color: white;
+}
+.switchBtn input:focus + .slider {
+  box-shadow: 0 0 2px black;
+}
+.switchBtn .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+.switchBtn .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: black;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.container {
+  padding: 1rem;
+  margin: auto;
+  background-color: plum;
+}
+.container h2 {
+  text-align: center;
+}
+@media (min-width: 700px) {
+  .container {
+    padding: 1rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (min-width: 920px) {
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+}
+.container .input-container {
+  background-color: rgb(160, 221, 183);
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  align-items: center;
+  max-width: 680px;
+}
+.container .input-container h2 {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+.container .input-container label {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+.container .input-container #btn_add {
+  padding: 0.8rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  background-color: rgb(79, 199, 31);
+}
+.container .input-container input {
+  width: 100%;
+  height: 40px;
+  margin: 0.5rem 0;
+  background-color: #e5e381;
+  border-radius: 10px;
+  border: none;
+  padding: 1rem;
+  color: red;
+  font-size: 1rem;
+  font-weight: 900;
+}
+.container .input-container ::-moz-placeholder {
+  color: rgb(79, 199, 31);
+  font-size: 1rem;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container .input-container ::placeholder {
+  color: rgb(79, 199, 31);
+  font-size: 1rem;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container .contentContainer {
+  max-width: 1200px;
+}
+@media (min-width: 920px) {
+  .container .contentContainer {
+    display: block;
+    width: 100%;
+  }
+}
+.container .contentContainer .cardContainer {
+  margin-top: 2rem;
+}
+@media (min-width: 700px) {
+  .container .contentContainer .cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+.container .contentContainer .cardContainer .card {
+  background-color: rgb(79, 199, 31);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 20px;
+}
+@media (min-width: 700px) {
+  .container .contentContainer .cardContainer .card {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+}
+@media (min-width: 920px) {
+  .container .contentContainer .cardContainer .card {
+    flex: 0 0 calc(25% - 0.75rem);
+  }
+}
+.container .contentContainer .cardContainer .card .info {
+  text-align: center;
+}
+.container .contentContainer .cardContainer .card .imgHolder {
+  margin-bottom: 0.5rem;
+}
+.container .contentContainer .cardContainer .card .imgHolder .image {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.noImg {
+  background-color: hotpink;
+  padding: 3rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  border-radius: 20px;
+}
+@media (min-width: 920px) {
+  .noImg {
+    max-width: 650px;
+  }
+}
+
+.dark header {
+  background-color: rgb(5, 85, 35);
+}
+.dark .container {
+  background-color: rgb(126, 4, 126);
+}
+.dark .container .input-container {
+  background-color: rgb(49, 64, 1);
+}
+.dark .container .input-container #btn_add {
+  background-color: rgb(122, 171, 0);
+}
+.dark .container .input-container input {
+  background-color: #828009;
+}
+.dark .container .input-container ::-moz-placeholder {
+  color: rgb(5, 85, 35);
+}
+.dark .container .input-container ::placeholder {
+  color: rgb(5, 85, 35);
+}
+.dark .container .cardContainer .card {
+  background-color: rgb(5, 85, 35);
+}
+.dark h1 {
+  color: white;
+}
+.dark p {
+  color: white;
+}
+.dark h3 {
+  color: white;
+}
+.dark h2 {
+  color: white;
+}
+.dark label {
+  color: white;
+}
+.dark .noImg {
+  background-color: rgb(151, 31, 91);
+}/*# sourceMappingURL=style.css.map */
